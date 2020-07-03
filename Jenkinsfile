@@ -23,24 +23,24 @@ pipeline {
     stage('Push result image') {
       
       steps {
-        withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
+        
           sh 'docker push ahikars/result'
-        }
+        
       }
     }
     stage('Push vote image') {
             steps {
-        withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
+    
           sh 'docker push ahikars/vote'
-        }
+        
       }
     }
     stage('Push worker image') {
      
       steps {
-        withDockerRegistry(credentialsId: 'dockerbuildbot-index.docker.io', url:'') {
+        
           sh 'docker push ahikars/worker'
-        }
+        
       }
     }
   }
